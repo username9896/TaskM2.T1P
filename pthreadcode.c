@@ -34,6 +34,7 @@ void *matrix_multiply(void *threadarg) {
 }
 
 int main() {
+   clock_t start_time = clock();
    block_size = N / NUM_THREADS;
    pthread_t threads[NUM_THREADS];
    struct thread_data td[NUM_THREADS];     // Create array of thread data structs
@@ -61,6 +62,10 @@ int main() {
          exit(-1);
       }
    }
+   
+   clock_t end_time = clock();
+  double execution_time = (static_cast<double>(end_time - start_time) / CLOCKS_PER_SEC) * 1000000000;
+  std::cout << "Execution time is - " << execution_time << " nanoseconds\n" <<std::endl;
 
    // Wait for all threads to complete
    for (int t = 0; t < NUM_THREADS; t++) {
