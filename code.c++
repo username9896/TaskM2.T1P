@@ -6,6 +6,7 @@
 using namespace std;
 
 int main() {
+  clock_t start_time = clock();
   const int N = 10; // Size of matrices
   int A[N][N], B[N][N], C[N][N]; // Declare matrices A, B and C
 
@@ -27,6 +28,10 @@ int main() {
       }
     }
   }
+  
+  clock_t end_time = clock();
+  double execution_time = (static_cast<double>(end_time - start_time) / CLOCKS_PER_SEC) * 1000000000;
+  std::cout << "Execution time is - " << execution_time << " nanoseconds\n" <<std::endl;
 
   // Write output to file
   ofstream output_file("output.txt"); // Create an output file stream named "output.txt"
