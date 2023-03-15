@@ -30,8 +30,8 @@ int main() {
   }
   
   clock_t end_time = clock();
-  double execution_time = (static_cast<double>(end_time - start_time) / CLOCKS_PER_SEC) * 1000000000;
-  std::cout << "Execution time is - " << execution_time << " nanoseconds\n" <<std::endl;
+  double execution_time = (static_cast<double>(end_time - start_time) / CLOCKS_PER_SEC);
+  std::cout << "Execution time is - " << execution_time << " seconds\n" <<std::endl;
 
   // Write output to file
   ofstream output_file("output.txt"); // Create an output file stream named "output.txt"
