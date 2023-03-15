@@ -64,8 +64,8 @@ int main() {
    }
    
    clock_t end_time = clock();
-  double execution_time = (static_cast<double>(end_time - start_time) / CLOCKS_PER_SEC) * 1000000000;
-  std::cout << "Execution time is - " << execution_time << " nanoseconds\n" <<std::endl;
+  double execution_time = (static_cast<double>(end_time - start_time) / CLOCKS_PER_SEC);
+  std::cout << "Execution time is - " << execution_time << " seconds\n" <<std::endl;
 
    // Wait for all threads to complete
    for (int t = 0; t < NUM_THREADS; t++) {
