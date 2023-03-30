@@ -6,12 +6,12 @@
 using namespace std;
 
 int main() {
-  clock_t start_time = clock();
   const int N = 10; // Size of matrices
   int A[N][N], B[N][N], C[N][N]; // Declare matrices A, B and C
 
   // Initialize matrices A and B with random values
   srand(time(nullptr)); // Seed the random number generator with the current time
+  clock_t start_time = clock();
   for (int i = 0; i < N; i++) {
     for (int j = 0; j < N; j++) {
       A[i][j] = rand() % 100; // set the random values to A
